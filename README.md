@@ -1,5 +1,4 @@
 # Sk Shieldus Rookies 딥러닝 미니 프로젝트 (3조)
-바보
 
 ## 당신의 나쁜 기억을 지워드립니다 '음성 챗봇 지우'
 ```
@@ -96,6 +95,25 @@ Module Version
 ---
 
 ### Bert (Emotion Analyze Model)
+- Bert 사용 이유
+keras 토크나이저와 LSTM, CNN 모델을 사용했을때 test set 정확도가 각각 0.50, 0.56로 도출되었다. 
+bert 토크나이저와 TFBertForSequenceClassification 모델을 사용하여 fine-tuning을 진행하자 test set 정확도가 0.68로 향상되었다.
+bert의 사전학습 모델은 KLUE-BERT로 모두의 말뭉치, CC-100-Kor, 나무위키, 뉴스, 청원 등 문서에서 추출한 63GB의 데이터로 학습되었다.
+
+- 데이터 
+csv 파일인 한국어 감정 정보가 포함된 단발성 대화 데이터 셋 55628개, 한국어 감정 정보가 포함된 연속적 대화 데이터 셋 38594개를 결합하여 총 94222개 데이터로 학습을 진행하였다.
+문장과 문장에 해당되는 감정으로 이루어져 있으며 7가지의 감정을 0-6 숫자로 라벨링하였다.
+
+- 학습 과정 및 결과론적 모델
+94222개 데이터를 train, test 8:2로 분리하여 학습을 진행하였다.(8 epoch)
+옵티마이저 알고리즘은 RAdam을 사용하여 학습 초기에 일어날 수 있는 bad local optima problem을 해결하고, 학습 안정성을 높였다. 
+다중분류이고 라벨값이 정수이기때문에 손실함수로 SparseCategoricalCrossentropy를 사용하였다.
+train set의 정확도는 0.8941, test set의 정확도는 0.6828가 도출되었다. 
+이는 train set에서 학습되지 않은 단어들이 test set에 등장하여 이런 격차가 나타난것으로 보인다. 이를 서브워드 토크나이저 : WordPiece Tokenizing를 사용하여 개선할 수 있을 것이다.
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/118544736/225842987-a2e50775-ee2f-46f8-8f8e-36ea8a61a1be.PNG">
+</p>
+
 
 
 ---
