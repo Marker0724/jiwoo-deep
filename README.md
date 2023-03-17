@@ -111,9 +111,10 @@ Module Version
  <p align="center">
   <img src="https://user-images.githubusercontent.com/118544736/225843830-08348631-f9de-4e3b-80cb-1a0d31f4b212.PNG">
 </p>
-   - Classification Report를 저장하여 test set의 정확도를 확인한 결과, 4번 감정, 즉 '중립' 감정의 정확도가 가장 높았다. 데이터셋의 불균형으로 인해 ‘중립’의 데이터수가 50%를 차지하여 가장 높은 정확도를 보인 것이다.
-   - train set의 정확도는 0.8941, test set의 정확도는 0.6828가 도출되었다. 
-    - 이는 train set에서 학습되지 않은 단어들이 test set에 등장하여 이런 격차가 나타난것으로 보인다. 이를 서브워드 토크나이저 : WordPiece Tokenizing를 사용하여 개선할 수 있을 것이다.
+
+  - Classification Report를 저장하여 test set의 정확도를 확인한 결과, 4번 감정, 즉 '중립' 감정의 정확도가 가장 높았다. 데이터셋의 불균형으로 인해 ‘중립’의 데이터수가 50%를 차지하여 가장 높은 정확도를 보인 것이다.
+  - train set의 정확도는 0.8941, test set의 정확도는 0.6828가 도출되었다. 
+   - 이는 train set에서 학습되지 않은 단어들이 test set에 등장하여 이런 격차가 나타난것으로 보인다. 이를 서브워드 토크나이저 : WordPiece Tokenizing를 사용하여 개선할 수 있을 것이다.
 
 
 ---
