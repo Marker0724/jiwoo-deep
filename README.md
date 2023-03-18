@@ -61,7 +61,7 @@ Module Version
 <br/>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56999067/225790589-6120e1b9-fd0c-4b47-9a5f-09a7e0d10ae7.PNG" alt="">
+  <img src="https://user-images.githubusercontent.com/56999067/226090860-fbe1c272-da7d-43cb-ab74-31ec3899998e.png" alt="">
 </p>
 <p align="center">
   pre-training 과정에서의 Wav2Vec 2.0 모델 아키텍처
